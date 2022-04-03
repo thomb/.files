@@ -31,8 +31,6 @@ set laststatus=2
 filetype plugin indent on
 syntax on
 
-highlight ColorColumn ctermbg=0 
-highlight CursorLine ctermbg=0
 
 let mapleader=","
 source ~/.vim/abbreviations.vim
@@ -44,6 +42,11 @@ syntax enable
 set background=dark
 colorscheme solarized
 colors dogrun
+
+highlight Normal ctermbg=0
+highlight ColorColumn ctermbg=5
+highlight CursorLine ctermbg=5
+highlight LineNr ctermfg=8
 
 """ airline                      
 let g:airline_section_b='%4*\ %<%F%*'            "full pathk
