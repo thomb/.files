@@ -1,0 +1,30 @@
+[submodule "pack/trb/start/ale"]
+	path = pack/trb/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "pack/trb/start/fzf.vim"]
+	path = pack/trb/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/trb/start/coc.nvim"]
+	path = pack/trb/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule "pack/trb/start/vim-airline"]
+	path = pack/trb/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/trb/start/vim-airline-themes"]
+	path = pack/trb/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "pack/trb/start/vim-prettier"]
+	path = pack/trb/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier
+[submodule ".vim/pack/trb/start/vim-colors-solarized"]
+	path = .vim/pack/trb/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule ".vim/pack/trb/start/vim-dogrun"]
+	path = .vim/pack/trb/start/vim-dogrun
+	url = https://github.com/wadackel/vim-dogrun
+[submodule ".vim/pack/trb/start/vim-clap"]
+	path = .vim/pack/trb/start/vim-clap
+	url = https://github.com/liuchengxu/vim-clap
+[submodule ".vim/pack/trb/start/vim-tmux-navigator"]
+	path = .vim/pack/trb/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
