@@ -16,3 +16,15 @@
 [submodule ".vim/pack/trb/start/ale"]
 	path = .vim/pack/trb/start/ale
 	url = https://github.com/dense-analysis/ale
+[submodule ".vim/pack/trb/start/vim-prettier"]
+	path = .vim/pack/trb/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier
+[submodule ".vim/pack/trb/start/vim-airline-themes"]
+	path = .vim/pack/trb/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".vim/pack/trb/start/vim-airline"]
+	path = .vim/pack/trb/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/trb/start/fzf.vim"]
+	path = .vim/pack/trb/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
