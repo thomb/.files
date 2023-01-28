@@ -1,12 +1,6 @@
-[submodule "pack/trb/start/ale"]
-	path = pack/trb/start/ale
-	url = https://github.com/dense-analysis/ale
 [submodule "pack/trb/start/fzf.vim"]
 	path = pack/trb/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "pack/trb/start/coc.nvim"]
-	path = pack/trb/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
 [submodule "pack/trb/start/vim-airline"]
 	path = pack/trb/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -28,3 +22,6 @@
 [submodule ".vim/pack/trb/start/vim-tmux-navigator"]
 	path = .vim/pack/trb/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule ".vim/pack/trb/start/coc.nvim"]
+	path = .vim/pack/trb/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
