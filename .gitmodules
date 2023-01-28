@@ -25,3 +25,6 @@
 [submodule ".vim/pack/trb/start/coc.nvim"]
 	path = .vim/pack/trb/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule ".vim/pack/trb/start/ale"]
+	path = .vim/pack/trb/start/ale
+	url = https://github.com/dense-analysis/ale
