@@ -1,15 +1,3 @@
-[submodule "pack/trb/start/fzf.vim"]
-	path = pack/trb/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
-[submodule "pack/trb/start/vim-airline"]
-	path = pack/trb/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/trb/start/vim-airline-themes"]
-	path = pack/trb/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "pack/trb/start/vim-prettier"]
-	path = pack/trb/start/vim-prettier
-	url = https://github.com/prettier/vim-prettier
 [submodule ".vim/pack/trb/start/vim-colors-solarized"]
 	path = .vim/pack/trb/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
