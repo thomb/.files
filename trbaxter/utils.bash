@@ -1,6 +1,7 @@
 # aliases
 alias cd..='cd ..'
 alias ll="ls -alh"
+alias vi="vim"
 
 
 src_env() {

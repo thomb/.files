@@ -28,3 +28,6 @@
 [submodule ".vim/pack/trb/start/fzf.vim"]
 	path = .vim/pack/trb/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "tmux-config"]
+	path = tmux-config
+	url = https://github.com/gpakosz/.tmux.git
