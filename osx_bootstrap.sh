@@ -20,7 +20,7 @@
 
 echo "Starting bootstrapping..."
 GITHUB_LOCATION="~/github"
-DOTFILES_LOCATION="$GITHUB_LOCATION/dotfiles"
+DOTFILES_LOCATION="$GITHUB_LOCATION/.files"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
