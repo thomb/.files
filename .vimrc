@@ -45,12 +45,12 @@ colors dogrun
 
 highlight Normal ctermbg=0
 highlight ColorColumn ctermbg=5
-highlight CursorLine ctermbg=5
-highlight LineNr ctermfg=8
+highlight LineNr ctermfg=5
+highlight CursorLine ctermfg=11
 
 """ airline                      
 let g:airline_section_b='%4*\ %<%F%*'            "full pathk
-let g:airline_detect_whitespace=0
+let g:airline_detect_whitespace=1
 let g:airline_theme='solarized'  
 let g:airline_powerline_fonts = 1
 

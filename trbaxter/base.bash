@@ -17,3 +17,8 @@ export GOPATH=$HOME/go
 [ -f ~/.trbaxter/prettyping.bash ] && source ~/.trbaxter/prettyping.bash
 [ -f ~/.trbaxter/htop.bash ] && source ~/.trbaxter/htop.bash
 [ -f ~/.trbaxter/misc.bash ] && source ~/.trbaxter/misc.bash
+
+
+allow_ufw_ssh () {
+  sudo ufw allow from $1 to any port 22 proto tcp 
+}
