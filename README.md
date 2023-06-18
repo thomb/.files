@@ -20,8 +20,19 @@ This plugin will need to be built.
 * sxiv
 
 ## NVM
+```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
 
 
 ## ASDF
+```
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+```
+
+
+### Login Changes
+
+```
+sudo cp "$DOTFILES_LOCATION/backgrounds/login/png" /usr/share/endeavouros/backgrounds/login.png
+```

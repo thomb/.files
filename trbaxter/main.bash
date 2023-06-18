@@ -7,7 +7,8 @@
 export CUSTOM_SCRIPT_LOCATION="$HOME/.trbaxter"
 export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
 export WEB_BASE="$HOME/trbaxter"
-export DOTFILES_LOCATION="$LOCAL_GITHUB/dotfiles"
+export LOCAL_GITHUB="$HOME/code"
+export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
 
 # Include the basic environment
 if [ -f $CUSTOM_SCRIPT_LOCATION/base.bash ]; then
