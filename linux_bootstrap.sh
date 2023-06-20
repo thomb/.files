@@ -1,23 +1,23 @@
 echo "Starting bootstrapping..."
-GITHUB_LOCATION="~/code"
+GITHUB_LOCATION="$HOME/code"
 DOTFILES_LOCATION="$GITHUB_LOCATION/.files"
 
 # Clone .tmux.conf
 echo "Cloning .tmux.conf..."
-git clone https://github.com/gpakosz/.tmux.git  ~/$GITHUB_LOCATION/.tmux
+git clone https://github.com/gpakosz/.tmux.git  $HOME/$GITHUB_LOCATION/.tmux
 ln -s -f $GITHUB_LOCATION/.tmux/.tmux.conf
 
 # Clone prettyping
 echo "Cloning prettyping..."
-git clone https://github.com/denilsonsa/prettyping.git ~/$GITHUB_LOCATION/prettyping
-chmod +x ~/$GITHUB_LOCATION/prettyping/prettyping
+git clone https://github.com/denilsonsa/prettyping.git $HOME/$GITHUB_LOCATION/prettyping
+chmod +x $HOME/$GITHUB_LOCATION/prettyping/prettyping
 
 # Clone thomb/dotfiles
 echo "Configuring Environment for trbaxter..."
-[[ ! -d ~/$GITHUB_LOCATION ]] && mkdir ~/$GITHUB_LOCATION
+[[ ! -d $HOME/$GITHUB_LOCATION ]] && mkdir $HOME/$GITHUB_LOCATION
 
-[[ ! -d ~/$DOTFILES_LOCATION ]] && mkdir ~/$DOTFILES_LOCATION
-git clone https://github.com/thomb/.files.git ~/$DOTFILES_LOCATION
+[[ ! -d $HOME/$DOTFILES_LOCATION ]] && mkdir "$HOME/$DOTFILES_LOCATION"
+git clone https://github.com/thomb/.files.git "$HOME/$DOTFILES_LOCATION"
 pushd $DOTFILES_LOCATION
 git submodule update --init --recursive
 popd
@@ -25,23 +25,31 @@ popd
 
 
 echo "Creating folder structure..."
-[[ ! -d ~/.work_bash ]] && ln -s $DOTFILES_LOCATION/work_bash ~/.work_bash
-[[ ! -d ~/.trbaxter ]] && ln -s $DOTFILES_LOCATION/trbaxter ~/.trbaxter
-[[ ! -d ~/.vim ]] && ln -s $DOTFILES_LOCATION/.vim ~/.vim
-[[ ! -d ~/.vimrc ]] && ln -s $DOTFILES_LOCATION/.vimrc ~/.vimrc
-[[ ! -d ~/.tmux.conf.local ]] && ln -s $DOTFILES_LOCATION/.tmux.conf ~/.tmux.conf.local
+[[ ! -d "$HOME/.work_bash" ]] && ln -s $DOTFILES_LOCATION/work_bash $HOME/.work_bash
+[[ ! -d "$HOME/.trbaxter" ]] && ln -s $DOTFILES_LOCATION/trbaxter $HOME/.trbaxter
+[[ ! -d "$HOME/.vim" ]] && ln -s $DOTFILES_LOCATION/.vim $HOME/.vim
+[[ ! -d "$HOME/.vimrc" ]] && ln -s $DOTFILES_LOCATION/.vimrc $HOME/.vimrc
+[[ ! -d "$HOME/.tmux.conf.local" ]] && ln -s $DOTFILES_LOCATION/.tmux.conf $HOME/.tmux.conf.local
 
 echo "Creating .bash_profile..."
-if [[ ! -d ~/.bash_profile ]]; then 
-	cat > ~/.bash_profile << EOL
+if [[ ! -d $HOME/.bash_profile ]]; then 
+	cat > $HOME/.bash_profile << EOL
 
 export LOCAL_GITHUB="$HOME/code"
-if [ -f ~/.trbaxter/main.bash ]; then
-	source ~/.trbaxter/main.bash
+export NVM_DIR="$HOME/.nvm"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+. "$HOME/.asdf/asdf.sh"
+
+if [ -f $HOME/.trbaxter/main.bash ]; then
+	source $HOME/.trbaxter/main.bash
 fi
 
-if [ -f ~/.work_bash/main.bash ]; then
-	source ~/.work_bash/main.bash
+if [ -f $HOME/.work_bash/main.bash ]; then
+	source $HOME/.work_bash/main.bash
 fi
 
 [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
