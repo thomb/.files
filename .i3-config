@@ -25,7 +25,7 @@
 font pango: Noto Sans Regular 10
 
 # set the mod key to the winkey:
-set $mod Mod1
+set $mod Mod4
 
 #####################
 # workspace layout: #
@@ -172,6 +172,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
+# bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -324,10 +325,16 @@ set $ws10 "10"
 #workspace $ws4 output HDMI-0
 #workspace $ws5 output HDMI-0
 
+
+# load multi monitor config
+exec ~/.config/i3/scripts/gullwing.sh
+
+
+
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
+# assign [class="Xfce4-terminal"] $ws1
 # assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
+# assign [class="Thunar"] $ws3
 # assign [class="thunderbird"] $ws4
 
 # automatic set focus new window if it opens on another workspace than the current:
@@ -513,7 +520,7 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 bar {
 		font pango: Noto Sans Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position bottom
+	    	position top
 #	    	i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
@@ -523,8 +530,8 @@ bar {
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
 # “[n][:][NAME]” will display only the name.
-strip_workspace_numbers yes
-##strip_workspace_name no
+# strip_workspace_numbers yes
+strip_workspace_name no
 
 		    colors {
 		    separator          $purple
