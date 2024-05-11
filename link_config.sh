@@ -7,7 +7,7 @@ ARCH_CONFIG_LOCATION="$HOME/.config"
 [[ ! -d "$HOME/.vimrc" ]] && ln -s "$DOTFILES_LOCATION/.vimrc" "$HOME/."
 [[ ! -d "$HOME/.tmux.config" ]] && ln -s "$DOTFILES_LOCATION/tmux-config/.tmux.config" "$HOME/."
 [[ ! -d "$HOME/.tmux.config.local" ]] && ln -s "$DOTFILES_LOCATION/tmux-config/.tmux.config.local" "$HOME/."
-if ["$ARCH_CONFIG_LOCATION" &&  "$ARCH_CONFIG_LOCATION/i3"]]; then
+if [[ "$ARCH_CONFIG_LOCATION" &&  "$ARCH_CONFIG_LOCATION/i3" ]]; then
   [[ -d "$ARCH_CONFIG_LOCATION/i3/config" ]] && rm "$ARCH_CONFIG_LOCATION/i3/config"
   ln -s "$DOTFILES_LOCATION/.i3-config" "$ARCH_CONFIG_LOCATION/i3/config"
 fi

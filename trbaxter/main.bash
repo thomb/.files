@@ -10,6 +10,9 @@ export LOCAL_GITHUB="$HOME/code"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
 export CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/trbaxter"
 
+
+[[ -s $DOTFILES_LOCATION/git-prompt.sh ]] && . "$DOTFILES_LOCATION/git-prompt.sh"
+	source $CUSTOM_SCRIPT_LOCATION/base.bash;
 # Include the basic environment
 if [ -f $CUSTOM_SCRIPT_LOCATION/base.bash ]; then
 	source $CUSTOM_SCRIPT_LOCATION/base.bash;
