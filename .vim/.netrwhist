@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/trb/code/.files/tmux-config'
+let g:netrw_dirhist_5='/home/trb/.config/i3/scripts'
 let g:netrw_dirhist_4='/home/trb/code/.files/.git/modules'
 let g:netrw_dirhist_3='/home/trb/code/dotfiles/.vim/pack/trb/start/coc.nvim-release'
 let g:netrw_dirhist_2='~'

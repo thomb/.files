@@ -19,4 +19,6 @@ inoremap <leader>cl console.log();<esc>hi
 nnoremap <leader>cl oconsole.log();<esc>hi
 inoremap <leader>p <esc>pA
 noremap <leader><space> :noh<CR>
+nnoremap <C-n> :new<CR>
+nnoremap <C-f> :FZF<CR>
 

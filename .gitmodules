@@ -31,3 +31,12 @@
 [submodule "tmux-config"]
 	path = tmux-config
 	url = https://github.com/gpakosz/.tmux.git
+[submodule ".vim/pack/trb/start/vim-snipmate"]
+	path = .vim/pack/trb/start/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule ".vim/pack/trb/start/tlib_vim"]
+	path = .vim/pack/trb/start/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule ".vim/pack/trb/start/vim-addon-mw-utils"]
+	path = .vim/pack/trb/start/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git

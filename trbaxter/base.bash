@@ -1,4 +1,5 @@
 export EDITOR=vim
+export VISUAL=vim
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -15,12 +16,12 @@ export GOPATH=$HOME/go
 
 
 # Personal Plugin Related 
-[ -f ~/.trbaxter/fzf.bash ] && source ~/.trbaxter/fzf.bash
-[ -f ~/.trbaxter/prettyping.bash ] && source ~/.trbaxter/prettyping.bash
-[ -f ~/.trbaxter/htop.bash ] && source ~/.trbaxter/htop.bash
-[ -f ~/.trbaxter/misc.bash ] && source ~/.trbaxter/misc.bash
+[ -f "$CUSTOM_SCRIPT_LOCATION/fzf.bash" ] && source "$CUSTOM_SCRIPT_LOCATION/fzf.bash"
+[ -f "$CUSTOM_SCRIPT_LOCATION/misc.bash" ] && source "$CUSTOM_SCRIPT_LOCATION/misc.bash"
+
 
 
 allow_ufw_ssh () {
   sudo ufw allow from $1 to any port 22 proto tcp 
 }
+

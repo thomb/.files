@@ -91,5 +91,13 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+"This expression seems to be responsible for coc formatting on enter
+inoremap <silent><expr> <cr> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"I this just says autocomplete with the first option if pop up menu is open.
+"If it is not open, just do a regular tab.
+inoremap <silent><expr> <tab> pumvisible() ? coc#select_confirm() : "\<C-g>u\<tab>"
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"
+
 """ Load Plugins
 packloadall
+

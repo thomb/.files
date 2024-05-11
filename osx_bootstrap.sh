@@ -170,7 +170,6 @@ popd
 
 echo "Creating folder structure..."
 [[ ! -d ~/.work_bash ]] && ln -s $DOTFILES_LOCATION/work_bash ~/.work_bash
-[[ ! -d ~/.trbaxter ]] && ln -s $DOTFILES_LOCATION/trbaxter ~/.trbaxter
 [[ ! -d ~/.vim ]] && ln -s $DOTFILES_LOCATION/.vim ~/.vim
 [[ ! -d ~/.vimrc ]] && ln -s $DOTFILES_LOCATION/.vimrc ~/.vimrc
 [[ ! -d ~/.tmux.conf.local ]] && ln -s $DOTFILES_LOCATION/.tmux.conf ~/.tmux.conf.local
@@ -180,9 +179,10 @@ if [[ ! -d ~/.bash_profile ]]; then
 	cat > ~/.bash_profile << EOL
 
 export LOCAL_GITHUB="$HOME/github"
+export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
 export HOMEBREW_PACKAGES=($PACKAGES[@])
-if [ -f ~/.trbaxter/main.bash ]; then
-	source ~/.trbaxter/main.bash
+if [ -f "$DOTFILES_LOCATION/trbaxter/main.bash" ]; then
+	source "$DOTFILES_LOCATION/trbaxter/main.bash"
 fi
 
 if [ -f ~/.work_bash/main.bash ]; then

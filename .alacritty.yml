@@ -28,14 +28,10 @@ colors:
     white:   '0x5f8787'
 
 font:
-  size: 16
+  size: 9
 key_bindings:
   - { key: Right, mods: Alt, chars: "\x1BF" }
   - { key: Left,  mods: Alt, chars: "\x1BB" }
 
 shell:
   program: /bin/bash
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"

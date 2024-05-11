@@ -4,11 +4,11 @@
 # but more often than not you will probably find yourself wanting to include only
 # certain scripts, so ... you've been warned
 
-export CUSTOM_SCRIPT_LOCATION="$HOME/.trbaxter"
 export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
 export WEB_BASE="$HOME/trbaxter"
 export LOCAL_GITHUB="$HOME/code"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
+export CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/trbaxter"
 
 # Include the basic environment
 if [ -f $CUSTOM_SCRIPT_LOCATION/base.bash ]; then

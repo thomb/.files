@@ -24,7 +24,7 @@ update_env_osx () {
 	popd
 }
 
-update_env_bash () {
+update_env_apt () {
 	echo "Updating packages..."
 	sudo apt update
 
@@ -37,7 +37,20 @@ update_env_bash () {
 	popd
 }
 
-alias update_env="update_env_bash"
+update_env_pacman() {
+	echo "Updating packages..."
+	sudo pacman -S
+
+	echo "Updating packages..."
+	sudo yay -S
+
+	echo "Updating .trbaxter submodules..."
+	pushd $DOTFILES_LOCATION
+	git submodule update --init --recursive
+	popd
+}
+
+alias update_env="update_env_apt"
 
 file_count () {
     find . -type f | wc -l
