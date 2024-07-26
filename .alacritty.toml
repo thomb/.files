@@ -24,6 +24,7 @@ yellow = "0xffc777"
 
 [colors.primary]
 background = "0x282c43"
+# background_secondary = "0x434552"
 foreground = "0x7f85a3"
 
 [font]

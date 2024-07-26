@@ -186,6 +186,7 @@ bindsym $mod+Shift+m exec ~/.config/i3/scripts/powermenu
 # lock by blurring the screen:
 bindsym $mod+Shift+q exec ~/.config/i3/scripts/blur-lock
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -237,15 +238,15 @@ bindsym $mod+Shift+Right move right
 # bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split toggle
+# bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
-bindsym $mod+Shift+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+g layout tabbed
+# bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -254,7 +255,7 @@ bindsym $mod+Shift+space floating toggle
 # bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
@@ -442,7 +443,8 @@ exec_always --no-startup-id autotiling
 exec --no-startup-id autotiling
 
 # Autostart apps as you #like
-exec --no-startup-id sleep 2 && firefox && alacritty
+# exec --no-startup-id sleep 2 && firefox
+# exec --no-startup-id sleep 3 && alacritty
 
 # exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
@@ -621,3 +623,5 @@ bindsym $mod+Shift+minus scratchpad show
 ##############
 
 focus_follows_mouse no
+
+exec_always picom -f
