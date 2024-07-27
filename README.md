@@ -16,13 +16,12 @@ git submodule update --init --recursive
 
 Mainly here as I constantly forget the exact syntax of the command
 
-## Arch packages
-* `pacman -S ranger`
-* `pacman -S sxiv`
-* `yay -S autojump`
-
-## coc.nvim
+#### coc.nvim
 This plugin will need to be built.
+
+### Link .vimrc and .vim
+`ln -s $DOTFILES_LOCATION/.vim ~/.vim`
+`ln -s $DOTFILES_LOCATION/.vimrc ~/.vimrc`
 
 
 
@@ -39,9 +38,28 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 ```
 
 
+
+
+## EndeavourOS Config
+
+### Arch packages
+
+* `pacman -S picom`
+* `pacman -S flameshot`
+* `pacman -S libqalculate`
+* `pacman -S ranger`
+* `pacman -S sxiv`
+* `yay -S autojump`
+* `yay -S rofi-calc`
+
 ### Login Changes
 
 Copy the background over before updating `/etc/lightdm/slick-greeter.conf`
 ```
 sudo cp "$DOTFILES_LOCATION/backgrounds/login.png" /usr/share/endeavouros/backgrounds/login.png
 ```
+
+### Link i3 and picom
+
+` ln -s $DOTFILES_LOCATION/.i3-config ~/.config/i3/config`
+` ln -s $DOTFILES_LOCATION/.picon-config ~/.config/picom.conf`

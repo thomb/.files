@@ -14,6 +14,11 @@ shadow-exclude = [
 ];
 
 
+dropdown_menu = { opacity = 1.0; };
+popup_menu    = { opacity = 1.0; };
+utility       = { opacity = 1.0; };
+tooltip = { opacity = 1.0; };
+
 corner-radius = 7;
 
 
