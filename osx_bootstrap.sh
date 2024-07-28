@@ -157,7 +157,7 @@ git clone https://github.com/denilsonsa/prettyping.git ~/$GITHUB_LOCATION/pretty
 chmod +x ~/$GITHUB_LOCATION/prettyping/prettyping
 
 # Clone thomb/dotfiles
-echo "Configuring Environment for trbaxter..."
+echo "Configuring Environment for thomb..."
 [[ ! -d ~/$GITHUB_LOCATION ]] && mkdir ~/$GITHUB_LOCATION
 
 [[ ! -d ~/$DOTFILES_LOCATION ]] && mkdir ~/$DOTFILES_LOCATION
@@ -181,8 +181,8 @@ if [[ ! -d ~/.bash_profile ]]; then
 export LOCAL_GITHUB="$HOME/github"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
 export HOMEBREW_PACKAGES=($PACKAGES[@])
-if [ -f "$DOTFILES_LOCATION/trbaxter/main.bash" ]; then
-	source "$DOTFILES_LOCATION/trbaxter/main.bash"
+if [ -f "$DOTFILES_LOCATION/thomb/main.bash" ]; then
+	source "$DOTFILES_LOCATION/thomb/main.bash"
 fi
 
 if [ -f ~/.work_bash/main.bash ]; then

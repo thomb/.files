@@ -54,8 +54,8 @@ new_window pixel 0
 hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 8
-gaps outer 0
+gaps inner 12
+gaps outer 4
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -65,6 +65,10 @@ gaps outer 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# change windows to floating while mouse dragging
+# bindsym --whole-window $mod+button1 floating toggle, move
+
 
 # switch/iterate between workspaces
 bindsym $mod+Tab workspace next
@@ -176,6 +180,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 bindsym $mod+Return exec alacritty
 bindsym $mod+m exec "alacritty -e btop"
 bindsym $mod+v exec "alacritty -e vim"
+bindsym $mod+Shift+e exec "alacritty -e vim -o ~/.config/picom.conf ~/.config/i3/config"
 bindsym $alt+Shift+4 exec "flameshot gui"
 
 # kill focused window
@@ -514,6 +519,7 @@ set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 set $pink #f8bbd0
 set $green  #81C784
+set $oceanblue  #031D27
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
@@ -530,12 +536,14 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # (plus the system information i3status finds out, if available)
 bar {
 		font pango: Noto Sans Regular 10
+  	output DisplayPort-0
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	i3bar_command i3bar --transparency
 	    	position top
-#	    	i3bar_command i3bar --transparency
+	padding 0 0 0 1px
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    #tray_output primary
+		    tray_output primary
 		    tray_padding 0
 
 # When strip_workspace_numbers is set to yes,
@@ -546,13 +554,13 @@ strip_workspace_name no
 
 		    colors {
 		    separator          $purple
-		    background         $darkgrey
+		    background         $darkblue
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+		focused_workspace	 $lightblue $lightblue $black $purple
+      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+      inactive_workspace	 $darkblue $darkblue $lightblue $purple
+		urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
 	}
 }
 
@@ -561,6 +569,42 @@ strip_workspace_name no
 # Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
 # https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
 # #08052be6 --> e6=90%
+
+bar {
+	font pango: Noto Sans Regular 10
+	output DisplayPort-1
+	status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
+	padding 0 0 0 1px
+	    	position top
+  colors {
+      separator          $darkblue
+      background         $darkblue
+      statusline         $white
+#                          		border 		        bg		txt		indicator
+		  focused_workspace	 $lightblue $lightblue $black $purple
+      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+      inactive_workspace	 $darkblue $darkblue $lightblue $purple
+      urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
+  }
+}
+
+bar {
+	font pango: Noto Sans Regular 10
+	output DisplayPort-2
+	status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
+	padding 0 0 0 1px
+	    	position top
+  colors {
+      separator          $darkblue
+      background         $darkblue
+      statusline         $white
+#                          		border 		        bg		txt		indicator
+		  focused_workspace	 $lightblue $lightblue $black $purple
+      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+      inactive_workspace	 $darkblue $darkblue $lightblue $purple
+      urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
+  }
+}
 
 # bar {
 #	font pango: Noto Sans Regular 10
@@ -596,7 +640,8 @@ strip_workspace_name no
 bindsym $mod+space exec rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort \
+		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi

@@ -4,7 +4,7 @@ DOTFILES_LOCATION="$GITHUB_LOCATION/.files"
 
 
 # Clone thomb/dotfiles
-echo "Configuring Environment for trbaxter..."
+echo "Configuring Environment for thomb..."
 [[ ! -d $HOME/$GITHUB_LOCATION ]] && mkdir $HOME/$GITHUB_LOCATION
 
 [[ ! -d $HOME/$DOTFILES_LOCATION ]] && mkdir "$HOME/$DOTFILES_LOCATION"
@@ -29,7 +29,7 @@ export LOCAL_GITHUB="$HOME/code"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
 export NVM_DIR="$HOME/.nvm"
 
-[[ -f $DOTFILES_LOCATION/trbaxter/main.bash ]] && source $DOTFILES_LOCATION/trbaxter/main.bash
+[[ -f $DOTFILES_LOCATION/thomb/main.bash ]] && source $DOTFILES_LOCATION/thomb/main.bash
 # This is where any contract specific bash scripts would live
 [[ -f $HOME/.work_bash/main.bash ]] && $HOME/.work_bash/main.bash
 

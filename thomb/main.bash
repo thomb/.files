@@ -4,11 +4,11 @@
 # but more often than not you will probably find yourself wanting to include only
 # certain scripts, so ... you've been warned
 
-export TMUXINATOR_CONFIG_LOCATION="$HOME/.trbaxter/tmuxinator"
-export WEB_BASE="$HOME/trbaxter"
+export TMUXINATOR_CONFIG_LOCATION="$HOME/.thomb/tmuxinator"
+export WEB_BASE="$HOME/thomb"
 export LOCAL_GITHUB="$HOME/code"
 export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
-export CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/trbaxter"
+export CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/thomb"
 
 
 [[ -s $DOTFILES_LOCATION/git-prompt.sh ]] && . "$DOTFILES_LOCATION/git-prompt.sh"

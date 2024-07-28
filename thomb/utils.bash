@@ -18,7 +18,7 @@ update_env_osx () {
 	echo "Cleaning up Homebrew..."
 	brew cleanup
 
-	echo "Updating .trbaxter submodules..."
+	echo "Updating .thomb submodules..."
 	pushd $DOTFILES_LOCATION
 	git submodule update --init --recursive
 	popd
@@ -31,7 +31,7 @@ update_env_apt () {
 	echo "Updating packages..."
 	sudo apt upgrade
 
-	echo "Updating .trbaxter submodules..."
+	echo "Updating .thomb submodules..."
 	pushd $DOTFILES_LOCATION
 	git submodule update --init --recursive
 	popd
@@ -44,7 +44,7 @@ update_env_pacman() {
 	echo "Updating packages..."
 	sudo yay -S
 
-	echo "Updating .trbaxter submodules..."
+	echo "Updating .thomb submodules..."
 	pushd $DOTFILES_LOCATION
 	git submodule update --init --recursive
 	popd
