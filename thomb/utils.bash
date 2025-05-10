@@ -55,3 +55,4 @@ alias update_env="update_env_apt"
 file_count () {
     find . -type f | wc -l
 }
+

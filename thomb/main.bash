@@ -4,11 +4,13 @@
 # but more often than not you will probably find yourself wanting to include only
 # certain scripts, so ... you've been warned
 
-export TMUXINATOR_CONFIG_LOCATION="$HOME/.thomb/tmuxinator"
-export WEB_BASE="$HOME/thomb"
-export LOCAL_GITHUB="$HOME/code"
-export DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
-export CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/thomb"
+export EDITOR="vim"
+export TERMINAL=alacritty
+TMUXINATOR_CONFIG_LOCATION="$HOME/.thomb/tmuxinator"
+WEB_BASE="$HOME/thomb"
+LOCAL_GITHUB="$HOME/code"
+DOTFILES_LOCATION="$LOCAL_GITHUB/.files"
+CUSTOM_SCRIPT_LOCATION="$DOTFILES_LOCATION/thomb"
 
 
 [[ -s $DOTFILES_LOCATION/git-prompt.sh ]] && . "$DOTFILES_LOCATION/git-prompt.sh"
@@ -68,5 +70,11 @@ if [ -f $CUSTOM_SCRIPT_LOCATION/utils.bash ]; then
 	source $CUSTOM_SCRIPT_LOCATION/utils.bash;
 else
 	echo "Cannot find: $CUSTOM_SCRIPT_LOCATION/utils.bash";
+fi
+
+
+# Include any local extensions
+if [ -f $HOME/.thomb.local ]; then
+	source $HOME/.thomb.local;
 fi
 

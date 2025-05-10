@@ -178,7 +178,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # start a terminal
 # bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+m exec "alacritty -e btop"
+bindsym $mod+m exec "alacritty -e ~/.thomb/local_monitor_tmux.sh"
 bindsym $mod+v exec "alacritty -e vim"
 bindsym $mod+Shift+e exec "alacritty -e vim -o ~/.config/picom.conf ~/.config/i3/config"
 bindsym $alt+Shift+4 exec "flameshot gui"
@@ -302,7 +302,7 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+e exec /usr/bin/alacritty -e /usr/bin/ranger
+bindsym $mod+e exec /usr/bin/thunar
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
@@ -328,15 +328,16 @@ set $ws10 "🔒"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-#workspace $ws1 output VGA-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output HDMI-0
-#workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+workspace $ws1 output DisplayPort-1
+workspace $ws2 output DisplayPort-2
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output HDMI-A-0
+workspace $ws5 output DisplayPort-1
+workspace $ws6 output DisplayPort-2
+workspace $ws7 output DisplayPort-0
+workspace $ws8 output HDMI-A-0
 
 
-# load multi monitor config
-exec ~/.screenlayout/gullwingnew.sh
 
 
 
@@ -346,12 +347,12 @@ exec ~/.screenlayout/gullwingnew.sh
 # assign [class="Thunar"] $ws3
 # assign [class="thunderbird"] $ws4
 assign [class="streamdeck"] $ws4
+assign [class="Steam"] $ws6
+assign [class=(?i)chromium] $ws7
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
 
 ##############
 # compositor #
@@ -411,7 +412,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/gullwing-2.sh"
+exec --no-startup-id ~/.screenlayout/mastercontrol_7800xt.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
@@ -535,74 +536,57 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Noto Sans Regular 10
-  	output DisplayPort-0
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	i3bar_command i3bar --transparency
-	    	position top
-	padding 0 0 0 1px
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output primary
-		    tray_padding 0
-
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-# strip_workspace_numbers yes
-strip_workspace_name no
-
-		    colors {
-		    separator          $purple
-		    background         $darkblue
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	 $lightblue $lightblue $black $purple
-      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
-      inactive_workspace	 $darkblue $darkblue $lightblue $purple
-		urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
-	}
-}
-
-# you can add different bars for multidisplay setups on each display:
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-bar {
-	font pango: Noto Sans Regular 10
-	output DisplayPort-1
-	status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
-	padding 0 0 0 1px
-	    	position top
+  font pango: Noto Sans Regular 10
+  output DisplayPort-1
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  i3bar_command i3bar --transparency
+  position top
+  padding 0 0 0 1px
+  tray_output primary
+  tray_padding 0
+  strip_workspace_name no
   colors {
-      separator          $darkblue
-      background         $darkblue
-      statusline         $white
-#                          		border 		        bg		txt		indicator
-		  focused_workspace	 $lightblue $lightblue $black $purple
-      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
-      inactive_workspace	 $darkblue $darkblue $lightblue $purple
-      urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
+    separator          $purple
+    background         $darkblue
+    statusline         $white
+    focused_workspace	 $lightblue $lightblue $black $purple
+    active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+    inactive_workspace	 $darkblue $darkblue $lightblue $purple
+    urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
   }
 }
 
 bar {
-	font pango: Noto Sans Regular 10
-	output DisplayPort-2
-	status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
-	padding 0 0 0 1px
-	    	position top
+  font pango: Noto Sans Regular 10
+  output DisplayPort-0
+  status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
+  padding 0 0 0 1px
+  position top
   colors {
-      separator          $darkblue
-      background         $darkblue
-      statusline         $white
-#                          		border 		        bg		txt		indicator
-		  focused_workspace	 $lightblue $lightblue $black $purple
-      active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
-      inactive_workspace	 $darkblue $darkblue $lightblue $purple
-      urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
+    separator          $darkblue
+    background         $darkblue
+    statusline         $white
+    focused_workspace	 $lightblue $lightblue $black $purple
+    active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+    inactive_workspace	 $darkblue $darkblue $lightblue $purple
+    urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
+  }
+}
+
+bar {
+  font pango: Noto Sans Regular 10
+  output DisplayPort-2
+  status_command i3blocks -c ~/.config/i3/i3blocks-secondary.conf
+  padding 0 0 0 1px
+  position top
+  colors {
+    separator          $darkblue
+    background         $darkblue
+    statusline         $white
+    focused_workspace	 $lightblue $lightblue $black $purple
+    active_workspace	 $oceanblue $oceanblue $mediumgrey $purple
+    inactive_workspace	 $darkblue $darkblue $lightblue $purple
+    urgent_workspace	 $urgentred	    	$urgentred	$white		$purple
   }
 }
 
@@ -675,4 +659,10 @@ bindsym $mod+Shift+minus scratchpad show
 
 focus_follows_mouse no
 
-exec_always picom -f
+##########################
+# Touchscreen - Personal #
+##########################
+
+exec xinput --map-to-output 9 DisplayPort-0
+exec xinput --map-to-output 15 DisplayPort-2
+#exec_always picom -f --experimental-backends
